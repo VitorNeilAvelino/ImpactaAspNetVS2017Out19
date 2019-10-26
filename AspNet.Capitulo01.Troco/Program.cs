@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ImpactaAspNet.Capitulo01.Variaveis
+namespace AspNet.Capitulo01.Troco
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace ImpactaAspNet.Capitulo01.Variaveis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VariaveisForm());
+            Application.Run(new TrocoForm());
         }
     }
 }
