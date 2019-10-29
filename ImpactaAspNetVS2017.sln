@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Capitulo01.Frete", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Capitulo01.Repeticao.Testes", "AspNet.Capitulo01.Repeticao.Testes\AspNet.Capitulo01.Repeticao.Testes.csproj", "{503827C9-D034-45D1-94FA-DD02D0347020}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Capitulo01.VetoresColecoes.Testes", "AspNet.Capitulo01.VetoresColecoes.Testes\AspNet.Capitulo01.VetoresColecoes.Testes.csproj", "{9A9B1A04-45C4-46FB-B845-837814897366}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{503827C9-D034-45D1-94FA-DD02D0347020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{503827C9-D034-45D1-94FA-DD02D0347020}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{503827C9-D034-45D1-94FA-DD02D0347020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9B1A04-45C4-46FB-B845-837814897366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9B1A04-45C4-46FB-B845-837814897366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9B1A04-45C4-46FB-B845-837814897366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9B1A04-45C4-46FB-B845-837814897366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
