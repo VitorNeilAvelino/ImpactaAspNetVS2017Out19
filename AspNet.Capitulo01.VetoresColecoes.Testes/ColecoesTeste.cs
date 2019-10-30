@@ -41,5 +41,27 @@ namespace AspNet.Capitulo01.VetoresColecoes.Testes
                 Console.WriteLine($"{inteiros.IndexOf(inteiro)}: {inteiro}");
             }
         }
+
+        [TestMethod]
+        public void DictionaryTeste()
+        {
+            var feriados = new Dictionary<DateTime, string>();
+
+            feriados.Add(new DateTime(2019, 11, 2), "Finados");
+            feriados.Add(Convert.ToDateTime("15/11/2019"), "Proclamação da República");
+            feriados.Add(Convert.ToDateTime("20/11/2019"), "Consciência Negra");
+            //feriados.Add(Convert.ToDateTime("20/11/2019"), "Natal");
+
+            var finados = feriados[new DateTime(2019, 11, 2)];
+
+            foreach (var feriado in feriados)
+            {
+                //Console.WriteLine($"{feriado.Key.ToShortDateString()}: {feriado.Value}");
+                Console.WriteLine($"{feriado.Key.ToString("dd/MM/yyyy")}: {feriado.Value}");
+            }
+
+            Console.WriteLine(feriados.ContainsKey(Convert.ToDateTime("15/11/2019")));
+            Console.WriteLine(feriados.ContainsValue("Finados"));
+        }
     }
 }
