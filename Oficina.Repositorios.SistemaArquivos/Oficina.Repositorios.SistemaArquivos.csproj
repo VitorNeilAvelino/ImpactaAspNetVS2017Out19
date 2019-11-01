@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CorRepositorio.cs" />
     <Compile Include="MarcaRepositorio.cs" />
+    <Compile Include="ModeloRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
