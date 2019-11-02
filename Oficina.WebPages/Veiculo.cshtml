@@ -1,0 +1,149 @@
+﻿@using Oficina.WebPages
+
+@{
+    var veiculoAplicacao = new VeiculoAplicacao();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro de veículos</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 16px;
+        }
+
+        label {
+            min-width: 100px;
+            display: inline-block;
+        }
+
+        input, select {
+            min-width: 200px;
+            min-height: 24px;
+            margin-bottom: 5px;
+        }
+
+            input[type=submit], textarea {
+                width: 300px;
+            }
+
+            #mensagemErro{
+                height: 40px;
+                background-color: #dc3545;
+                margin-bottom: 10px;
+                color: white;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 40px;
+            }
+    </style>
+</head>
+<body onload="exibirMensagem()">
+    <h1>Cadastro de veículos</h1>
+    <hr />
+    @if (IsPost)
+    {
+        try
+        {
+            veiculoAplicacao.Inserir();
+            Response.Redirect("Veiculo?mensagem=Veículo gravado com sucesso!");
+        }
+        catch
+        {
+            <div id="mensagemErro">@HttpContext.Current.Items["MensagemErro"]</div>
+        }
+    }
+    <form method="post">
+        <label>Marca</label>
+        <select name="marca" onchange="obterModelos(this.value)">
+            <option value="">Selecione</option>
+            @{
+                foreach (var marca in veiculoAplicacao.Marcas)
+                {
+                    <option value="@marca.Id"
+                            selected="@Convert.ToBoolean(veiculoAplicacao.MarcaSelecionada == marca.Id.ToString())">
+                        @marca.Nome
+                    </option>
+                }
+            }
+        </select>
+        <br />
+        <label>Modelo</label>
+        <select name="modelo">
+            <option value="">Selecione</option>
+            @{
+                foreach (var modelo in veiculoAplicacao.Modelos)
+                {
+                    <option value="@modelo.Id">@modelo.Nome</option>
+                }
+            }
+        </select>
+        <br />
+        <label>Cor</label>
+        <select name="cor">
+            <option value="">Selecione</option>
+            @{
+                foreach (var cor in veiculoAplicacao.Cores)
+                {
+                    <option value="@cor.Id">@cor.Nome</option>
+                }
+            }
+        </select>
+        <br />
+        <label>Combustível</label>
+        <select name="combustivel">
+            <option value="">Selecione</option>
+            @{
+                foreach (var combustivel in veiculoAplicacao.Combustiveis)
+                {
+                    <option value="@((int)combustivel)">@combustivel</option>
+                }
+            }
+        </select>
+        <br />
+        <label>Câmbio</label>
+        <select name="cambio">
+            <option value="">Selecione</option>
+            @{
+                foreach (var cambio in veiculoAplicacao.Cambios)
+                {
+                    <option value="@((int)cambio)">@cambio</option>
+                }
+            }
+        </select>
+        <br />
+        <label for="placa">Placa</label>
+        <input type="text" name="placa" id="placa" />
+        <br />
+        <label for="placa">Ano</label>
+        <input type="text" name="ano" id="ano" />
+        <br />
+        <label for="observacao">Observação</label>
+        <br />
+        <textarea name="observacao" rows="10" cols="40"></textarea>
+        <br />
+        <input type="submit" value="Gravar" />
+    </form>
+    <script type="text/javascript">
+        function obterModelos(marcaId) {
+            const nomePagina = document.location.pathname;
+            document.location.href = nomePagina + "?marcaId=" + marcaId;
+        }
+
+        function exibirMensagem() {
+            const url = new URL(document.location);
+            const mensagem = url.searchParams.get("mensagem");
+
+            if (mensagem) {
+                alert(mensagem);
+                document.location.href = "veiculo";
+            }
+        }
+    </script>
+</body>
+</html>
