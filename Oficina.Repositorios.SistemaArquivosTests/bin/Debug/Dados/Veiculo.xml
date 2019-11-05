@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<veiculos>
+  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Ká</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Branco</Nome>
+    </Cor>
+    <Combustivel>Flex</Combustivel>
+    <Cambio>Manual</Cambio>
+    <Ano>2014</Ano>
+    <Observacao>Obs</Observacao>
+  </Veiculo>
+  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Ká</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Branco</Nome>
+    </Cor>
+    <Combustivel>Flex</Combustivel>
+    <Cambio>Manual</Cambio>
+    <Ano>2014</Ano>
+    <Observacao>Obs</Observacao>
+  </Veiculo>
+</veiculos>

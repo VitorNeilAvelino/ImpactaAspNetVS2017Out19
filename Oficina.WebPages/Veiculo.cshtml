@@ -1,0 +1,25 @@
+﻿@using Oficina.WebPages;
+@{
+    var aplicacao = new VeiculoAplicacao();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro de veículos</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <label>Marca</label>
+        <select>
+            <option value="">Selecione</option>
+            @foreach (var marca in aplicacao.Marcas)
+            {
+                <option value="@marca.Id">@marca.Nome</option>    
+            }
+        </select>
+    </form>
+</body>
+</html>
