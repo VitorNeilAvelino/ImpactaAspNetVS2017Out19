@@ -11,15 +11,90 @@
     <title>Cadastro de veículos</title>
 </head>
 <body>
-    <form action="/" method="post">
+    @if (IsPost)
+    {
+        aplicacao.Gravar();
+        Response.Redirect("veiculo");
+    }
+    <h1>Cadastro de veículos</h1>
+    <hr />
+    <form method="post">
         <label>Marca</label>
-        <select>
+        <select onchange="obterModelos(this.value)" name="marca">
             <option value="">Selecione</option>
             @foreach (var marca in aplicacao.Marcas)
             {
-                <option value="@marca.Id">@marca.Nome</option>    
+                <option value="@marca.Id"
+                        selected="@Convert.ToBoolean(marca.Id.ToString() == aplicacao.MarcaSelecionada)">
+                    @marca.Nome
+                </option>
             }
         </select>
+        <br />
+
+        <label>Modelo</label>
+        <select name="modelo">
+            <option value="">Selecione</option>
+            @foreach (var modelo in aplicacao.Modelos)
+            {
+                <option value="@modelo.Id">@modelo.Nome</option>
+            }
+        </select>
+        <br />
+
+        <label>Cor</label>
+        <select name="cor">
+            <option value="">Selecione</option>
+            @foreach (var cor in aplicacao.Cores)
+            {
+                <option value="@cor.Id">@cor.Nome</option>
+            }
+        </select>
+        <br />
+
+        <label>Combustível</label>
+        <select name="combustivel">
+            <option value="">Selecione</option>
+            @foreach (var combustivel in aplicacao.Combustiveis)
+            {
+                <option value="@((int)combustivel)">@combustivel</option>
+            }
+        </select>
+        <br />
+
+        <label>Câmbio</label>
+        <select name="cambio">
+            <option value="">Selecione</option>
+            @foreach (var cambio in aplicacao.Cambios)
+            {
+                <option value="@((int)cambio)">@cambio</option>
+            }
+        </select>
+        <br />
+
+        <label for="placa">Placa</label>
+        <input type="text" name="placa" id="placa" />
+        <br />
+
+        <label for="ano">Ano</label>
+        <input type="text" name="ano" id="ano" />
+        <br />
+
+        <label for="observacao">Observação</label>
+        <br />
+        <textarea name="observacao" id="observacao" cols="40" rows="10"></textarea>
+        <br />
+
+        <input type="submit" value="Gravar"/>
     </form>
+
+    <script type="text/javascript">
+        function obterModelos(marcaId) {
+            const nomePagina = document.location.pathname;
+
+            document.location.href = nomePagina + "?marcaId=" + marcaId;
+        }
+    </script>
+
 </body>
 </html>
