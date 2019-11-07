@@ -11,6 +11,7 @@ namespace Oficina.Repositorios.SistemaArquivos
         static string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
             ConfigurationManager.AppSettings["caminhoArquivoCor"]);
 
+        // ToDo: OO - Polimorfismo por sobrecarga.
         public List<Cor> Obter()
         {
             var cores = new List<Cor>();

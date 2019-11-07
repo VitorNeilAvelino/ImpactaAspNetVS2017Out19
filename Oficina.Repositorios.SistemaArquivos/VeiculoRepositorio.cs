@@ -18,10 +18,10 @@ namespace Oficina.Repositorios.SistemaArquivos
 
         XDocument arquivoXml = XDocument.Load(caminhoArquivo);
 
-        public void Gravar(Veiculo veiculo)
+        public void Gravar<T>(T veiculo)
         {
             var registro = new StringWriter();
-            var serializador = new XmlSerializer(typeof(Veiculo));
+            var serializador = new XmlSerializer(typeof(T));
 
             serializador.Serialize(registro, veiculo);
 

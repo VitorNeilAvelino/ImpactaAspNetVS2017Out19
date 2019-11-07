@@ -53,7 +53,7 @@ namespace Oficina.WebPages
 
         public void Gravar()
         {
-            var veiculo = new Veiculo();
+            var veiculo = new VeiculoPasseio();
             var formulario = HttpContext.Current.Request.Form;
 
             veiculo.Ano = Convert.ToInt32(formulario["ano"]);
@@ -62,7 +62,8 @@ namespace Oficina.WebPages
             veiculo.Cor = corRepositorio.Obter(Convert.ToInt32(formulario["cor"]));
             veiculo.Modelo = modeloRepositorio.Obter(Convert.ToInt32(formulario["modelo"]));
             veiculo.Observacao = formulario["observacao"];
-            veiculo.Placa = formulario["placa"];
+            veiculo.Placa = formulario["placa"]/*.ToUpper()*/;
+            veiculo.TipoCarroceria = TipoCarroceria.Hatch;
 
             veiculoRepositorio.Gravar(veiculo);
         }

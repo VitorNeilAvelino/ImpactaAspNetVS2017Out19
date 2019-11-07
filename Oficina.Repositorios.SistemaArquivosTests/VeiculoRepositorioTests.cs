@@ -15,7 +15,7 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
         [TestMethod()]
         public void GravarTest()
         {
-            var veiculo = new Veiculo();
+            var veiculo = new VeiculoPasseio();
 
             veiculo.Ano = 2014;
             veiculo.Cambio = Cambio.Manual;
@@ -24,8 +24,9 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
             veiculo.Modelo = new ModeloRepositorio().Obter(1);
             veiculo.Observacao = "Obs";
             veiculo.Placa = "ABC1234";
+            veiculo.TipoCarroceria = TipoCarroceria.Hatch;
 
-            new VeiculoRepositorio().Gravar(veiculo);
+            new VeiculoRepositorio().Gravar<VeiculoPasseio>(veiculo);
         }
     }
 }
