@@ -31,16 +31,34 @@
             input[type=submit] {
                 width: 300px;
             }
+
+        #mensagemErro {
+            height: 40px;
+            background-color: #dc3545;
+            margin-bottom: 10px;
+            color: white;
+            text-align: center;
+            vertical-align:middle;
+            line-height: 40px;
+        }
     </style>
 </head>
 <body>
+    <h1>Cadastro de veículos</h1>
+    <hr />
     @if (IsPost)
     {
         aplicacao.Gravar();
-        Response.Redirect("veiculo");
+
+        if (string.IsNullOrEmpty(aplicacao.MensagemErro))
+        {
+            Response.Redirect("veiculo");
+        }
+        else
+        {
+            <div id="mensagemErro">@aplicacao.MensagemErro</div>
+        }
     }
-    <h1>Cadastro de veículos</h1>
-    <hr />
     <form method="post">
         <label>Marca</label>
         <select onchange="obterModelos(this.value)" name="marca">
@@ -108,7 +126,7 @@
         <textarea name="observacao" id="observacao" cols="40" rows="10"></textarea>
         <br />
 
-        <input type="submit" value="Gravar"/>
+        <input type="submit" value="Gravar" />
     </form>
 
     <script type="text/javascript">

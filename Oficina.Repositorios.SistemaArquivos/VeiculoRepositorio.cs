@@ -1,22 +1,19 @@
-﻿using Oficina.Dominio;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class VeiculoRepositorio
+    public class VeiculoRepositorio : RepositorioBase
     {
-        static string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            ConfigurationManager.AppSettings["caminhoArquivoVeiculo"]);
+       private XDocument arquivoXml;
 
-        XDocument arquivoXml = XDocument.Load(caminhoArquivo);
+        public VeiculoRepositorio() : base("caminhoArquivoVeiculo")
+        {
+            //arquivoXml = XDocument.Load(CaminhoArquivo);
+        }
 
         public void Gravar<T>(T veiculo)
         {
@@ -25,8 +22,10 @@ namespace Oficina.Repositorios.SistemaArquivos
 
             serializador.Serialize(registro, veiculo);
 
+            arquivoXml = XDocument.Load(CaminhoArquivo);
+
             arquivoXml.Root.Add(XElement.Parse(registro.ToString()));
-            arquivoXml.Save(caminhoArquivo);
+            arquivoXml.Save(CaminhoArquivo);
         }
     }
 }

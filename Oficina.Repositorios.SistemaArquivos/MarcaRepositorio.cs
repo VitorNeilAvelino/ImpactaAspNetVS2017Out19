@@ -6,16 +6,18 @@ using System.IO;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class MarcaRepositorio
+    public class MarcaRepositorio : RepositorioBase
     {
-        static string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            ConfigurationManager.AppSettings["caminhoArquivoMarca"]);
+        public MarcaRepositorio() : base("caminhoArquivoMarca")
+        {
+
+        }
 
         public List<Marca> Obter()
         {
             var marcas = new List<Marca>();
 
-            foreach (var linha in File.ReadAllLines(caminhoArquivo))
+            foreach (var linha in File.ReadAllLines(CaminhoArquivo))
             {
                 var propriedades = linha.Split('|');
 
@@ -33,7 +35,7 @@ namespace Oficina.Repositorios.SistemaArquivos
         {
             Marca marca = null;
 
-            foreach (var linha in File.ReadAllLines(caminhoArquivo))
+            foreach (var linha in File.ReadAllLines(CaminhoArquivo))
             {
                 var propriedades = linha.Split('|');
 

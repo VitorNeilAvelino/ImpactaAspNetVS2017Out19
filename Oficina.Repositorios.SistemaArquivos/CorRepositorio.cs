@@ -6,17 +6,19 @@ using System.IO;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class CorRepositorio
+    public class CorRepositorio : RepositorioBase
     {
-        static string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            ConfigurationManager.AppSettings["caminhoArquivoCor"]);
+        public CorRepositorio() : base("caminhoArquivoCor")
+        {
+            //base
+        }
 
         // ToDo: OO - Polimorfismo por sobrecarga.
         public List<Cor> Obter()
         {
             var cores = new List<Cor>();
 
-            foreach (var linha in File.ReadAllLines(caminhoArquivo))
+            foreach (var linha in File.ReadAllLines(CaminhoArquivo))
             {
                 var cor = new Cor();
                 cor.Id = Convert.ToInt32(linha.Substring(0, 5));
@@ -32,7 +34,7 @@ namespace Oficina.Repositorios.SistemaArquivos
         {
             Cor cor = null;
 
-            foreach (var linha in File.ReadAllLines(caminhoArquivo))
+            foreach (var linha in File.ReadAllLines(CaminhoArquivo))
             {
                 var linhaId = Convert.ToInt32(linha.Substring(0, 5));
 

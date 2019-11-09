@@ -1,22 +1,23 @@
 ﻿using Oficina.Dominio;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 using System.Xml.Linq;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class ModeloRepositorio
+    public class ModeloRepositorio : RepositorioBase
     {
-        static string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            ConfigurationManager.AppSettings["caminhoArquivoModelo"]);
+        private XDocument arquivoXml;
 
-        XDocument arquivoXml = XDocument.Load(caminhoArquivo);
+        public ModeloRepositorio() : base("caminhoArquivoModelo")
+        {
+
+        }
 
         public List<Modelo> ObterPorMarca(int marcaId)
         {
             var modelos = new List<Modelo>();
+            arquivoXml = XDocument.Load(CaminhoArquivo);
 
             foreach (var elemento in arquivoXml.Descendants("modelo"))
             {
@@ -29,7 +30,7 @@ namespace Oficina.Repositorios.SistemaArquivos
                     modelo.Nome = elemento.Element("nome").Value;
 
                     var marcaRepositorio = new MarcaRepositorio();
-                    
+
                     modelo.Marca = marcaRepositorio.Obter(marcaId);
 
                     modelos.Add(modelo);
@@ -42,6 +43,7 @@ namespace Oficina.Repositorios.SistemaArquivos
         public Modelo Obter(int id)
         {
             Modelo modelo = null;
+            arquivoXml = XDocument.Load(CaminhoArquivo);
 
             foreach (var elemento in arquivoXml.Descendants("modelo"))
             {
