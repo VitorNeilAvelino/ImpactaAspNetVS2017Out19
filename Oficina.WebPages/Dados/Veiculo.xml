@@ -114,4 +114,23 @@
     <Ano>2014</Ano>
     <Observacao>2003</Observacao>
   </Veiculo>
+  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>asdf</Placa>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Ká</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Branco</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Manual</Cambio>
+    <Ano>3241</Ano>
+    <Observacao>1924</Observacao>
+  </Veiculo>
 </veiculos>

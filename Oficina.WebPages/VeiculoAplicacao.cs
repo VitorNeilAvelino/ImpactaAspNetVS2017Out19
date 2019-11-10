@@ -10,10 +10,10 @@ namespace Oficina.WebPages
 {
     public class VeiculoAplicacao
     {
-        CorRepositorio corRepositorio = new CorRepositorio();
-        MarcaRepositorio marcaRepositorio = new MarcaRepositorio();
-        ModeloRepositorio modeloRepositorio = new ModeloRepositorio();
-        VeiculoRepositorio veiculoRepositorio = new VeiculoRepositorio();
+        private readonly CorRepositorio corRepositorio = new CorRepositorio();
+        private readonly MarcaRepositorio marcaRepositorio = new MarcaRepositorio();
+        private readonly ModeloRepositorio modeloRepositorio = new ModeloRepositorio();
+        private readonly VeiculoRepositorio veiculoRepositorio = new VeiculoRepositorio();
 
         public VeiculoAplicacao()
         {
@@ -26,6 +26,7 @@ namespace Oficina.WebPages
         public List<Combustivel> Combustiveis { get; private set; }
         public List<Cambio> Cambios { get; private set; }
         public List<Modelo> Modelos { get; private set; } = new List<Modelo>();
+        public string MensagemErro { get; private set; }
 
         private void PopularControles()
         {
@@ -60,16 +61,27 @@ namespace Oficina.WebPages
 
                 veiculoRepositorio.Inserir(veiculo);
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException ex) when (!ex.FileName.ToUpper().Contains("SENHA"))
             {                
-                HttpContext.Current.Items.Add("MensagemErro", $"Arquivo {ex.FileName} não encontrado.");
-                throw;
+                MensagemErro =  $"Arquivo {ex.FileName} não encontrado.";
             }
-            catch (Exception)
+            catch (UnauthorizedAccessException)
             {
-                HttpContext.Current.Items.Add("MensagemErro", "Eita, algo deu errado!");
-                throw;
+                MensagemErro = "Arquivo sem permissão de gravação";
             }
+            catch (DirectoryNotFoundException)
+            {
+                MensagemErro = "Caminho não encontrado";
+            }
+            catch /*(Exception)*/
+            {
+                MensagemErro = "Eita, algo deu errado!";
+                // Logar o objeto exception.
+            }
+            //finally
+            //{
+
+            //}
         }
     }
 }

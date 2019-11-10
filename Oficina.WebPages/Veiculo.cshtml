@@ -32,32 +32,35 @@
                 width: 300px;
             }
 
-            #mensagemErro{
-                height: 40px;
-                background-color: #dc3545;
-                margin-bottom: 10px;
-                color: white;
-                text-align: center;
-                vertical-align: middle;
-                line-height: 40px;
-            }
+        #mensagemErro {
+            height: 40px;
+            background-color: #dc3545;
+            margin-bottom: 10px;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 40px;
+        }
     </style>
 </head>
 <body onload="exibirMensagem()">
     <h1>Cadastro de veículos</h1>
     <hr />
+
     @if (IsPost)
     {
-        try
+        veiculoAplicacao.Inserir();
+
+        if (string.IsNullOrEmpty(veiculoAplicacao.MensagemErro))
         {
-            veiculoAplicacao.Inserir();
             Response.Redirect("Veiculo?mensagem=Veículo gravado com sucesso!");
         }
-        catch
+        else
         {
-            <div id="mensagemErro">@HttpContext.Current.Items["MensagemErro"]</div>
+            <div id="mensagemErro">@veiculoAplicacao.MensagemErro</div>
         }
     }
+
     <form method="post">
         <label>Marca</label>
         <select name="marca" onchange="obterModelos(this.value)">
@@ -79,7 +82,10 @@
             @{
                 foreach (var modelo in veiculoAplicacao.Modelos)
                 {
-                    <option value="@modelo.Id">@modelo.Nome</option>
+                    <option value="@modelo.Id"
+                            selected="@Convert.ToBoolean(Request.Form["modelo"] == modelo.Id.ToString())">
+                        @modelo.Nome
+                    </option>
                 }
             }
         </select>
@@ -90,7 +96,10 @@
             @{
                 foreach (var cor in veiculoAplicacao.Cores)
                 {
-                    <option value="@cor.Id">@cor.Nome</option>
+                    <option value="@cor.Id"
+                            selected="@Convert.ToBoolean(Request.Form["cor"] == cor.Id.ToString())">
+                        @cor.Nome
+                    </option>
                 }
             }
         </select>
@@ -101,7 +110,10 @@
             @{
                 foreach (var combustivel in veiculoAplicacao.Combustiveis)
                 {
-                    <option value="@((int)combustivel)">@combustivel</option>
+                    <option value="@((int)combustivel)"
+                            selected="@Convert.ToBoolean(Request.Form["combustivel"] == ((int)combustivel).ToString())">
+                        @combustivel
+                    </option>
                 }
             }
         </select>
@@ -112,21 +124,28 @@
             @{
                 foreach (var cambio in veiculoAplicacao.Cambios)
                 {
-                    <option value="@((int)cambio)">@cambio</option>
+                    <option value="@((int)cambio)"
+                            selected="@Convert.ToBoolean(Request.Form["cambio"] == ((int)cambio).ToString())">
+                        @cambio
+                    </option>
                 }
             }
         </select>
         <br />
+
         <label for="placa">Placa</label>
-        <input type="text" name="placa" id="placa" />
+        <input type="text" name="placa" id="placa" value="@Request.Form["placa"]" />
         <br />
+
         <label for="placa">Ano</label>
-        <input type="text" name="ano" id="ano" />
+        <input type="text" name="ano" id="ano" value="@Request.Form["ano"]" />
         <br />
+
         <label for="observacao">Observação</label>
         <br />
-        <textarea name="observacao" rows="10" cols="40"></textarea>
+        <textarea name="observacao" rows="10" cols="40">@Request.Form["observacao"]</textarea>
         <br />
+
         <input type="submit" value="Gravar" />
     </form>
     <script type="text/javascript">
