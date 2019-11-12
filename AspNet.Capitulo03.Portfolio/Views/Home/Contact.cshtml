@@ -6,13 +6,20 @@
 
 <h2>Contact</h2>
 
+@if (ViewBag.Sucesso == true)
+{
+    <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Obrigado!</strong> Em breve retornarei seu contato.
+    </div>
+}
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>ContatoViewModel</h4>
+        <h4>@ViewBag.Message</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -34,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Mensagem, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Mensagem, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Mensagem, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Mensagem, "", new { @class = "text-danger" })
             </div>
         </div>
