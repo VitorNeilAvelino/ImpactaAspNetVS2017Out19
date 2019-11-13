@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace AspNet.Capitulo03.Portfolio.Models
 {
     public class PortfolioViewModel
     {
-        public List<string> CaminhosImagens { get; set; }
+        public PortfolioViewModel()
+        {
+            //CaminhosImagens = new List<string>();
+        }
+
+        public List<string> CaminhosImagens { get; set; } = new List<string>();
     }
 }

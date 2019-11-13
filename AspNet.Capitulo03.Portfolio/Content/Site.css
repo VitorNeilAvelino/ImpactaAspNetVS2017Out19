@@ -29,3 +29,9 @@ textarea {
     color: white;
     text-shadow: 2px 2px 4px black;
 }
+
+.img-responsive{
+    height: 200px;
+    padding: 5px;
+    float: left;
+}

@@ -4,17 +4,22 @@
     ViewBag.Title = "Portfólio";
 }
 
+@section css{
+    <link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
+}
+
 <h2>@ViewBag.Title</h2>
 
 <div class="row">
     @foreach (var caminho in Model.CaminhosImagens)
     {
-        <a href="@caminho">
-            <img src="@caminho" alt="@caminho" />
+        <a href="@caminho" class="fancybox">
+            <img class="img-responsive" src="@caminho" alt="@caminho" />
         </a>
     }
 </div>
 
 @section scripts{
     <script src="~/Scripts/jquery.fancybox.js"></script>
+    <script src="~/Scripts/Home/portfolio.js"></script>
 }
