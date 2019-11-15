@@ -23,7 +23,7 @@ namespace ViagensOnline.Mvc.Models
 
         public string CaminhoImagem { get; set; }
 
-        [DisplayName("Foto")]
+        [Display(Name = "Foto")]
         public HttpPostedFileBase ArquivoFoto { get; set; }
     }
 }

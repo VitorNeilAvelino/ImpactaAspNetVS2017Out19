@@ -43,7 +43,7 @@
             @Html.LabelFor(model => model.ArquivoFoto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.ArquivoFoto, 
-               new { htmlAttributes = new { @class = "form-control", type="file" } })
+                htmlAttributes: new { @class = "form-control", type="file" } )
                 @Html.ValidationMessageFor(model => model.ArquivoFoto, "", new { @class = "text-danger" })
             </div>
         </div>
