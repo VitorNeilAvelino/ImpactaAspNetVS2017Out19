@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pessoal.Dominio", "Pessoal.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pessoal.Repositorios.SqlServer", "Pessoal.Repositorios.SqlServer\Pessoal.Repositorios.SqlServer.csproj", "{0FE4F545-3508-4DFD-82ED-812765E8C00D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pessoal.Repositorios.SqlServer.Testes", "Pessoal.Repositorios.SqlServer.Testes\Pessoal.Repositorios.SqlServer.Testes.csproj", "{95FE3BF0-D7BD-4D4E-B828-34B75074BD7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pessoal.Repositorios.SqlServer.Testes", "Pessoal.Repositorios.SqlServer.Testes\Pessoal.Repositorios.SqlServer.Testes.csproj", "{95FE3BF0-D7BD-4D4E-B828-34B75074BD7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
