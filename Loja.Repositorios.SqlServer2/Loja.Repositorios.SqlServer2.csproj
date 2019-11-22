@@ -4,15 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DD7BA81E-5E01-40F9-9EF2-CAC770BC6A1B}</ProjectGuid>
+    <ProjectGuid>{B4B3DD0B-58B9-487C-BFC8-F83F5AC55F99}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Loja.Repositorios.SqlServer</RootNamespace>
-    <AssemblyName>Loja.Repositorios.SqlServer</AssemblyName>
+    <RootNamespace>Loja.Repositorios.SqlServer2</RootNamespace>
+    <AssemblyName>Loja.Repositorios.SqlServer2</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,25 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LojaDbContext.cs" />
     <Compile Include="Model1.cs" />
-    <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
-    <Compile Include="ModelConfiguration\ProdutoImagemConfiguration.cs" />
-    <Compile Include="ModelConfiguration\ProdutoConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Loja.Dominio\Loja.Dominio.csproj">
-      <Project>{ABE145AB-AFA9-4136-B01B-3B08D30F6745}</Project>
-      <Name>Loja.Dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

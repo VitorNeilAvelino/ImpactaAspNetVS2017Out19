@@ -29,6 +29,7 @@ namespace Loja.Repositorios.SqlServer
 
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
             modelBuilder.Configurations.Add(new CategoriaConfiguration());
+            modelBuilder.Configurations.Add(new ProdutoImagemConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
