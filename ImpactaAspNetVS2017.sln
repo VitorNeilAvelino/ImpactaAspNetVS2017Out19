@@ -47,7 +47,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pessoal.Repositorios.SqlSer
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Pessoal.Database.SqlServer", "Pessoal.Database.SqlServer\Pessoal.Database.SqlServer.sqlproj", "{82F830E1-71A0-4E3C-8DDF-F5EB60A6B8B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pessoal.Mvc", "Pessoal.Mvc\Pessoal.Mvc.csproj", "{C93AB812-78BD-4D09-B5F3-D21F15B35D30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pessoal.Mvc", "Pessoal.Mvc\Pessoal.Mvc.csproj", "{C93AB812-78BD-4D09-B5F3-D21F15B35D30}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Loja", "Loja", "{1F5A1D96-24A5-4404-B541-95CBD132D055}"
 EndProject
@@ -56,6 +56,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Repositorios.SqlServer", "Loja.Repositorios.SqlServer\Loja.Repositorios.SqlServer.csproj", "{DD7BA81E-5E01-40F9-9EF2-CAC770BC6A1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Repositorios.SqlServerTests", "Loja.Repositorios.SqlServerTests\Loja.Repositorios.SqlServerTests.csproj", "{E5C64271-B485-4ED9-ADE7-85830B06043D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Mvc", "Loja.Mvc\Loja.Mvc.csproj", "{60A1AF64-4A5C-48A6-921A-28C94ECE0CF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -148,6 +150,10 @@ Global
 		{E5C64271-B485-4ED9-ADE7-85830B06043D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5C64271-B485-4ED9-ADE7-85830B06043D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5C64271-B485-4ED9-ADE7-85830B06043D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A1AF64-4A5C-48A6-921A-28C94ECE0CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A1AF64-4A5C-48A6-921A-28C94ECE0CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A1AF64-4A5C-48A6-921A-28C94ECE0CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A1AF64-4A5C-48A6-921A-28C94ECE0CF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +176,7 @@ Global
 		{ABE145AB-AFA9-4136-B01B-3B08D30F6745} = {1F5A1D96-24A5-4404-B541-95CBD132D055}
 		{DD7BA81E-5E01-40F9-9EF2-CAC770BC6A1B} = {1F5A1D96-24A5-4404-B541-95CBD132D055}
 		{E5C64271-B485-4ED9-ADE7-85830B06043D} = {1F5A1D96-24A5-4404-B541-95CBD132D055}
+		{60A1AF64-4A5C-48A6-921A-28C94ECE0CF7} = {1F5A1D96-24A5-4404-B541-95CBD132D055}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {499A8260-2391-4815-A438-2CD5887A27CC}
