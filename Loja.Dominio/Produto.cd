@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Loja.Dominio.Categoria" Collapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Categoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loja.Dominio.Pedido" Collapsed="true">
+    <Position X="5.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pedido.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Produtos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Loja.Dominio.Produto" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAAAAgAAAAAAAAAAAAABAACAAEAAEAAAA=</HashCode>
+      <FileName>Produto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Categoria" />
+      <Property Name="Imagem" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pedidos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Loja.Dominio.ProdutoImagem" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAE=</HashCode>
+      <FileName>ProdutoImagem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Produto" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
