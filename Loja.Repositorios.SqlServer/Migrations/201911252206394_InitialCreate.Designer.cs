@@ -13,7 +13,7 @@ namespace Loja.Repositorios.SqlServer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201911222348257_InitialCreate"; }
+            get { return "201911252206394_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

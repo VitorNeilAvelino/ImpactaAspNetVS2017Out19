@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LojaDbContext.cs" />
-    <Compile Include="Migrations\201911222348257_InitialCreate.cs" />
-    <Compile Include="Migrations\201911222348257_InitialCreate.Designer.cs">
-      <DependentUpon>201911222348257_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201911252206394_InitialCreate.cs" />
+    <Compile Include="Migrations\201911252206394_InitialCreate.Designer.cs">
+      <DependentUpon>201911252206394_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
@@ -76,8 +76,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911222348257_InitialCreate.resx">
-      <DependentUpon>201911222348257_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911252206394_InitialCreate.resx">
+      <DependentUpon>201911252206394_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
