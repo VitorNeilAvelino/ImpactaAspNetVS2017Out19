@@ -1,6 +1,6 @@
 ﻿namespace Loja.Dominio
 {
-    public enum Perfil
+    public enum PerfilUsuario
     {
         Master = 1,
         Zeus = 2,

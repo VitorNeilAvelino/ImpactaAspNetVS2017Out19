@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Loja.Dominio;
 using Loja.Mvc.Areas.Vendas.Models;
+using Loja.Mvc.Helpers;
 using Loja.Mvc.Mapeamentos;
 using Loja.Repositorios.SqlServer;
 
@@ -96,7 +97,8 @@ namespace Loja.Mvc.Areas.Vendas.Controllers
             return View(produto);
         }
 
-        [Authorize(Roles = "Master, Premium, Gerente, Odin")]
+        //[Authorize(Roles = "Master, Premium, Gerente, Odin")]
+        [AuthorizeRole(PerfilUsuario.Master, PerfilUsuario.Gerente)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
