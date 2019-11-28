@@ -24,7 +24,7 @@ namespace Northwind.WebApi.Controllers
         // GET: api/Products
         public IQueryable<Products> GetProducts()
         {
-            return db.Products;
+            return db.Products.OrderBy(p => p.ProductName);
         }
 
         // GET: api/Products/5

@@ -46,8 +46,34 @@
 
     function getProducts() {
         return $.ajax({
-            type: "get",
+            method: "get",
             url: urlApiProdutos
+        });
+    }
+
+    function postProduct(produto) {
+        return $.ajax({
+            method: "POST",
+            url: urlApiProdutos,
+            data: produto
+        });
+    }
+
+    function putProduct(produto) {
+        delete produto.suppliers;
+        delete produto.categories;
+
+        return $.ajax({
+            method: "PUT",
+            url: urlApiProdutos + "/" + produto.productID,
+            data: produto
+        });
+    }
+
+    function deleteProduct(produto) {
+        return $.ajax({
+            method: "delete",
+            url: urlApiProdutos + "/" + produto.productID
         });
     }
     
